@@ -109,3 +109,14 @@ datasets:
     embed: timeF
     freq: 0
     percent: 100
+  kline_1m:
+    root_path: ./datasets/kline/
+    data_path: ETH_USDT-202201-202504.csv
+    data_name: kline
+    data: kline
+    lradj: type4
+    features: S
+    target: high'
+    embed: timeF
+    freq: 'T'
+    percent: 10

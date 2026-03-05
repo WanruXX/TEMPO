@@ -40,7 +40,7 @@ pool: false
 no_stl_loss: false
 stl_weight: 0.001
 config_path: ./configs/custom_dataset.yml
-datasets: ETTm1,ETTh1,ETTm2,electricity,traffic,weather
+datasets: ETTm1,ETTh1,ETTm2,electricity,traffic,weather,kline_1m
 target_data: Custom
 use_token: 0
 electri_multiplier: 1
