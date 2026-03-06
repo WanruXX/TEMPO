@@ -1109,7 +1109,7 @@ class Dataset_Kline(Dataset):
         size=None,
         features="S",
         data_path="kline.csv",
-        target="OT",
+        target="high",
         scale=True,
         timeenc=0,
         freq="h",
@@ -1268,10 +1268,10 @@ class Dataset_Kline(Dataset):
             df_stamp["hour"] = df_stamp["timestamp"].dt.hour
             df_stamp["minute"] = df_stamp["timestamp"].dt.minute
             df_stamp["second"] = df_stamp["timestamp"].dt.second
-            data_stamp = df_stamp.drop(["timestamp"], 1).values
+            data_stamp = df_stamp.drop(columns=["timestamp"]).values
         elif self.timeenc == 1:
             data_stamp = time_features(
-                pd.to_datetime(df_stamp["date"].values), freq=self.freq
+                pd.to_datetime(df_stamp["timestamp"].values), freq=self.freq
             )
             data_stamp = data_stamp.transpose(1, 0)
 
